@@ -10,6 +10,12 @@ post "/receive_commit" do
 	#for now, assume all commits are by the same coder.
 	author = push["commits"][0]["author"]
 	repo = push["repository"]
+
+	if repo["name"]=="cfa_coder_sounds"
+		system("git submodule foreach git pull")
+		$sounds=YAML::load_file("cfa_coder_sounds/list.yml")
+	end
+
 	
 	sound = $sounds["users"].values_at(*author.values).find {|x| !x.nil?} || ($sounds["projects"][repo["owner"]["name"]] || {})[repo["name"]] || $sounds["default"]
 	system("mpg321 cfa_coder_sounds/sounds/#{sound}")
