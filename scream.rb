@@ -12,7 +12,7 @@ post "/receive_commit" do
 	repo = push["repository"]
 
 	if repo["name"]=="cfa_coder_sounds"
-		system("git submodule foreach git pull")
+		system("git submodule foreach git pull origin master")
 		$sounds=YAML::load_file("cfa_coder_sounds/list.yml")
 	end
 
