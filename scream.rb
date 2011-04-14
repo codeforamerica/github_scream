@@ -24,6 +24,7 @@ post "/receive_commit" do
 		next if commit["message"].match /^Merge branch/		
 		message = commit["author"]["name"]+" pushed to "+repo["name"]+", "+commit["message"]
 		message.gsub!(/["']/,'')
+		message.gsub! '#',' # '
 		puts "playing '#{message}'"
 		system("echo '#{message}' | festival --tts")
 		#sleep 5
