@@ -1,0 +1,20 @@
+---
+default: hawk.mp3
+
+users:
+
+  #add your name, colon, sound filename
+  #Horatio Cain: yeaah.mp3
+  #email also works
+  #sunglasses@miami.us: yeaah.mp3
+  #or github username
+  #miami_codez: yeahh.mp3
+
+projects:
+  #for project-specific sounds
+  
+  #this is the project owner
+  exampleowner:
+  
+    #this is the project
+    exampleproject: hawk.mp3

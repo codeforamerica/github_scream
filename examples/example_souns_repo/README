@@ -1,0 +1,14 @@
+<your_orginization> Coder Screams
+==========
+For fun, add your sound file to github. Every time you push to a tracked repo, your file will be played in the office. Keep it under 5 secs please ;)
+
+Convention:
+==========
+
+mp3 files are preferred.
+add your file to somewhere in the sounds/ directory
+in the list.yml file, under 'users', add a line in this format:
+    GithubUserName: file_name.mp3
+    
+you can also use your real name (according to github) or your email, if preferred
+make sure you have the same amount of indentation.
