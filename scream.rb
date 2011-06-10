@@ -17,7 +17,7 @@ post "/receive_commit" do
 	end
 
     commits_by_sound = push["commits"].group_by do |commit|
-        sound = commit["author"]['username']+".mp3" if File.exist?("sounds/"+commit['author']['username']+".mp3") # check for user
+        sound = commit["author"]["username"]+".mp3" if File.exist?("sounds/"+commit["author"]["username"]+".mp3") # check for user
         sound ||= repo["owner"]["name"]+"/"+repo["name"]+".mp3" if File.exist?("sounds/"+repo["owner"]["name"]+"/"+repo["name"]+".mp3") # check for project
         sound ||= "default.mp3" # default
     end
