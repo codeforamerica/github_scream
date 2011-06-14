@@ -7,7 +7,7 @@ Dir.chdir($sound_repo) #treat our sounds repo as our current working directory, 
 $sounds = YAML::load_file("list.yml")
 
 
-post "/receive_commit" do
+post %r{/receive_commit/?} do
 	push = JSON.parse(params[:payload])
 	puts "got push: "
 	pp push
