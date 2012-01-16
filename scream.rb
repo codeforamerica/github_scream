@@ -28,8 +28,9 @@ post %r{/receive_commit/?} do
 	end
 	
 	commits_by_sound.each do |sound,commits|
-		system("mpg321 sounds/#{sound}")
+		system("afplay sounds/#{sound}")
 		message = commits[0]["author"]["name"]+" pushed #{commits.length} commit#{'s' unless commits.length==1} to "+repo["name"]
+		puts "playing '#{message}'"
 		system("say #{message}")
 	end
 	
