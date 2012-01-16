@@ -30,10 +30,7 @@ post %r{/receive_commit/?} do
 	commits_by_sound.each do |sound,commits|
 		system("mpg321 sounds/#{sound}")
 		message = commits[0]["author"]["name"]+" pushed #{commits.length} commit#{'s' unless commits.length==1} to "+repo["name"]
-		message.gsub!(/["']/,'')
-		message.gsub! '#',' hash '
-		puts "playing '#{message}'"
-		system("echo '#{message}' | festival --tts")
+		system("say #{message}")
 	end
 	
 	[200,{},"coo"]
