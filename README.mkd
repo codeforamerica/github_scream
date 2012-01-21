@@ -16,8 +16,8 @@ You need a couple things. First, the environment:
 * This computer will need ruby. The code has only been tested with ruby 1.9.2, so that's recommended. However, 1.8.7 should probably work with little to no modification.
 * You'll need to install the necessary gems. This project uses bundler to manage gem dependencies
 
-    gem install bundler
-    bundle install
+    $ gem install bundler
+    $ bundle install
 
 ## Next, the sounds:
 * Set up a 'sounds' repository on github for your organization. name it anything you like
@@ -34,7 +34,7 @@ You need a couple things. First, the environment:
 
 ## Finally, launching it:
 * On your server, in the project directory, issue
-    rackup -p <port>
+    $ rackup -p <port>
 * to test it, go to your github repository, 'admin'->'service hooks' -> 'Post-Receive URLs', and click 'test hook'
 * pump up the volume
 
