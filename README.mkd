@@ -1,10 +1,10 @@
 # GitHub Scream
 
-What's this all about?
+## What's this all about?
 In "It's a Wonderful Life", Every time an angel gets his wings, a little bell rings.
 With this code running, every time a developer pushes to your github repo, a bloodcurdling hawk scream will erupt from your office's speakers!
 
-Cool. How do I set it up?
+## Cool. How do I set it up?
 You need a couple things. First, the environment:
 
 * First, set up a linux-based server to run it on, and attach to it some speakers. The louder, the better.
@@ -19,22 +19,22 @@ You need a couple things. First, the environment:
     gem install bundler
     bundle install
 
-Next, the sounds:
+## Next, the sounds:
 * Set up a 'sounds' repository on github for your organization. name it anything you like
 * for examples, see examples/sound_repo, or check out our sounds here: https://github.com/codeforamerica/cfa_coder_sounds
 * make sure there's a process in place for letting people upload new sounds into your repo!
 * the HAWK SCREAM has been included in examples/example_sound_repo/sounds/hawk.mp3 to get you started. :)
 
-Then, configuration:
+## Then, configuration:
 
 * in the root of the project directory, you'll need a config.yml file this is a YAML based configuration file. it needs to have the key "sound_repo", referring to the name of your sound repository
 * in the root of the project directory, 'git clone' your sounds repo, so it appears as a subdirectory
 * THIS IS THE IMPORTANT PART: on any github repository you want to have scream, go to 'admin'->'service hooks' -> 'Post-Receive URLs', and add a line of this form:
 		<your server's address><:port>/receive_commit
 
-Finally, launching it:
+## Finally, launching it:
 * On your server, in the project directory, issue
-  rackup -p <port>
+    rackup -p <port>
 * to test it, go to your github repository, 'admin'->'service hooks' -> 'Post-Receive URLs', and click 'test hook'
 * pump up the volume
 
